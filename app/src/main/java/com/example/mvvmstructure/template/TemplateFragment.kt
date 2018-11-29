@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import com.example.mvvmstructure.R
 import com.example.mvvmstructure.base.BaseFragment
 import com.example.mvvmstructure.databinding.FragmentTemplateBinding
@@ -27,5 +28,17 @@ class TemplateFragment : BaseFragment<FragmentTemplateBinding, TemplateFragmentV
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initInstance()
+        subscribeData()
+    }
+
+    private fun initInstance() {
+
+    }
+
+    private fun subscribeData() {
+        viewModel.errorModel.observe(this, Observer {
+
+        })
     }
 }

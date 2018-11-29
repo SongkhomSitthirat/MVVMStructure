@@ -2,6 +2,7 @@ package com.example.mvvmstructure.template
 
 import android.os.Bundle
 import android.view.View
+import androidx.lifecycle.Observer
 import com.example.mvvmstructure.R
 import com.example.mvvmstructure.base.BaseActivity
 import com.example.mvvmstructure.databinding.ActivityTemplateBinding
@@ -17,6 +18,17 @@ class TemplateActivity : BaseActivity<ActivityTemplateBinding, TemplateViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        initInstance()
+        subscribeData()
+    }
 
+    private fun initInstance() {
+
+    }
+
+    private fun subscribeData() {
+        viewModel.errorModel.observe(this, Observer {
+
+        })
     }
 }
